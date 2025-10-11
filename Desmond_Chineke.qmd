@@ -1,0 +1,155 @@
+---
+title: "Desmond_CHineke"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+**R for Life Science - Assignment 2**
+
+by **Desmond Chineke**
+
+### **1. Basic Arithmetic**
+
+```{r}
+# Calculate the result of (5 + 3) × 2 − 4(5 + 3)
+result <- (5 + 3) * 2 - 4 * (5 + 3)
+print(result)
+```
+
+### **2. Creating Variables**
+
+```{r}
+# Create a variable called height_cm and assign it a value of 172
+height_cm <- 172
+print(height_cm)
+
+```
+
+### **3. Understanding Data Types**
+
+```{r}
+# Create variables of different data types
+numeric_var <- 12.5        # numeric
+character_var <- "Biology" # character
+logical_var <- TRUE        # logical
+
+# Print the variables
+print(numeric_var)
+print(character_var)
+print(logical_var)
+
+```
+
+### **4. Working with Vectors**
+
+```{r}
+# Create a vector called weights
+weights <- c(55, 60, 72, 65, 80)
+
+# Print the length of the vector
+length(weights)
+
+```
+
+### **5. Accessing Elements in a Vector**
+
+```{r}
+# Extract the third value from the weights vector
+weights[3]
+
+```
+
+### **6. Creating a Data Frame**
+
+```{r}
+# Create a data frame called patients
+patients <- data.frame(
+  name = c("Ada", "Bola", "Tunde", "Zainab"),
+  age = c(23, 25, 21, 24)
+)
+
+# Display the data frame
+print(patients)
+View(patients)
+```
+
+### **7. Selecting Columns (using dplyr)**
+
+```{r}
+# Load dplyr
+library(dplyr)
+
+# Select only the name column
+patients_select <- select(patients,
+                          name = name)
+print(patients_select)
+head(patients_select)
+```
+
+### **8. Filtering Rows (using dplyr)**
+
+```{r}
+# Filter patients whose age is greater than 22
+
+age_22 <- filter(patients,
+                 age > 22)
+
+print(age_22)
+age_22
+```
+
+### **9. Creating a List**
+
+```{r}
+# Create a list called student_info
+student_info <- list(
+  name = "John",
+  age = 20,
+  test_scores = c(75, 80, 68, 90)
+)
+
+# Display the list
+student_info
+
+```
+
+### **10. Selecting Multiple Columns (using dplyr)**
+
+```{r}
+# Create a data frame called exam
+exam <- data.frame(
+  student = c("Aisha", "John", "Tomi", "David"),
+  score = c(78, 65, 85, 92),
+  grade = c("B", "C", "A", "A")
+)
+
+exam
+print(exam)
+
+# Select only the student and score columns
+exam_select <- select(exam,
+                      student = student, 
+                      score = score)
+exam_select
+```
